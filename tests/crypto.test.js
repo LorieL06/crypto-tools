@@ -1,5 +1,4 @@
 const crypto = require('crypto');
-
 const caesarCipher = (text, shift, decrypt = false) => {
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const shiftAmount = decrypt ? -shift : shift;
@@ -13,8 +12,6 @@ const caesarCipher = (text, shift, decrypt = false) => {
         return char;
     }).join('');
 };
-
-// Vigenère Cipher function (copied from server.js for testing)
 const vigenereCipher = (text, key, decrypt = false) => {
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const keyUpper = key.toUpperCase();
@@ -35,8 +32,6 @@ const vigenereCipher = (text, key, decrypt = false) => {
         return char;
     }).join('');
 };
-
-// Hash function (copied from server.js for testing)
 const calculateHash = (text, algorithm) => {
     return crypto.createHash(algorithm).update(text).digest('hex');
 };
@@ -47,12 +42,10 @@ describe('Crypto Tools Tests', () => {
             const result = caesarCipher('HELLO', 3, false);
             expect(result).toBe('KHOOR');
         });
-
         test('should decrypt text with shift 3', () => {
             const result = caesarCipher('KHOOR', 3, true);
             expect(result).toBe('HELLO');
         });
-
         test('should handle shift 0', () => {
             const text = 'HELLO WORLD';
             const encrypted = caesarCipher(text, 0, false);
