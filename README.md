@@ -29,7 +29,7 @@ Bu proje, temel kriptografi algoritmalarını uygulayan ve hash hesaplama araçl
 
 1. Projeyi klonlayın:
 ```bash
-git clone <repository-url>
+git clone https://github.com/LorieL06/crypto-tools
 cd crypto-tools
 ```
 
